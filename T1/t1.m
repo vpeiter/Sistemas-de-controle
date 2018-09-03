@@ -40,7 +40,16 @@ s = tf('s');
 Ca_U = (Caf_0 - Ca_0)/(s + k1 + 2*Ca_0*k3 + u_0); % Ca/U
 Ca_Caf = (u_0)/(s + k1 + 2*Ca_0*k3 + u_0); % Ca/Caf
 Cb_Ca = (k1)/(s + k2 + u_0); % Cb/Ca
-Cb_U = (Cb_0)/(s + k2 + u_0); % Cb/U
+Cb_U = -(Cb_0)/(s + k2 + u_0); % Cb/U
 
+%% Questao 6
+P = 0.66/(0.5757*s + 1);
+Q = 0.46/(0.641*s + 1);
+% Kc = 3.4045;
+Kc = 1.5349;
+% Ti = 0.4908;
+Ti = 0.2724;
+C = (Kc*(1+Ti*s))/(Ti*s);
 
+MF = C*P/(1+C*P)
 
